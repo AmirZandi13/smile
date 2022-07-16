@@ -60,3 +60,32 @@ To get that please run this command
 #### php artisan access-token:create
 
 ## Tests
+
+To run the tests, at first you should set env variables in .env.testing
+to do that you can run this command: 
+#### cp .env.testing.example .env.testing
+after that you have to set these env variables
+#### DB_HOST
+#### DB_PORT
+#### DB_DATABASE
+#### DB_USERNAME
+#### DB_PASSWORD
+
+#### TEST_USER_NAME
+#### TEST_USER_EMAIL
+#### TEST_USER_PASSWORD
+
+#### ACCESS_TOKEN_NAME
+#### CARD_NUMBER_PREFIX
+
+ok cool, now you can run the tests with this command
+#### php artisan test
+
+
+## The end
+I hope you enjoy from this project, please tell me your points about this project.
+
+#### Amir Zandieh
+#### Amirzandieh1@gamil.com
+
+#### Thanks
