@@ -1,0 +1,9 @@
+curl --location --request POST 'localhost:8000/api/v1/transfer' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer 1|ijx0xvRYdA3qa5dwsO0D2MzWBYDsh2igdfHaMSiY' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "origin_account_number" : "22354719",
+    "destination_account_number" : "23206424",
+    "amount" : "20"
+}'

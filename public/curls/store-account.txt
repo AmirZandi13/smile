@@ -1,0 +1,7 @@
+curl --location --request POST 'localhost:8000/api/v1/accounts' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer 1|ijx0xvRYdA3qa5dwsO0D2MzWBYDsh2igdfHaMSiY' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "account_type": "normal"
+}'
