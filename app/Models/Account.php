@@ -22,13 +22,26 @@ class Account extends Model
         'user_id',
         'account_type_id',
         'account_number',
-        'date_opened'
+        'date_opened',
+        'balance'
     ];
 
+    /**
+     * @var string[]
+     */
     protected $with = [
         'user',
         'accountType',
         'accountCards'
+    ];
+
+    /**
+     * @var string[]
+     */
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+        'deleted_at'
     ];
 
     /**

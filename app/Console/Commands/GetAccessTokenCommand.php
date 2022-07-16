@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Services\AuthServiceInterface;
 use App\Services\UserServiceInterface;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Hash;
 
 class GetAccessTokenCommand extends Command
 {
@@ -42,7 +43,7 @@ class GetAccessTokenCommand extends Command
                 'data' => [
                     'name' => $testUserName,
                     'email' => $testUserEmail,
-                    'password' => $testUserPassword
+                    'password' => Hash::make($testUserPassword)
                 ]
             ]);
         }

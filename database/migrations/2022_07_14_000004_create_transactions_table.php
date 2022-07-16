@@ -18,8 +18,8 @@ return new class extends Migration
         Schema::create(Tables::TRANSACTIONS, function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedInteger('origin_account_id')->index();
-            $table->unsignedInteger('destination_account_id')->index();
+            $table->unsignedBigInteger('origin_account_id')->index();
+            $table->unsignedBigInteger('destination_account_id')->index();
 
             $table->timestamp('date')->default(Carbon::now());
             $table->string('amount');

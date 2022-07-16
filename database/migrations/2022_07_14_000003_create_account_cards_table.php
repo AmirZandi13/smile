@@ -18,7 +18,7 @@ return new class extends Migration
         Schema::create(Tables::ACCOUNT_CARDS, function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedInteger('account_id')->index();
+            $table->unsignedBigInteger('account_id')->index();
 
             $table->string('number')->unique();
             $table->unsignedInteger('cvv2');

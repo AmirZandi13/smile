@@ -15,6 +15,6 @@ class AuthService implements AuthServiceInterface
     {
         $accessTokenName = env('ACCESS_TOKEN_NAME', 'smile-bank-project');
 
-        return $user->createToken($accessTokenName)->accessToken->token;
+        return $user->createToken($accessTokenName)->plainTextToken;
     }
 }
