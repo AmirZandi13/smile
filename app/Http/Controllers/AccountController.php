@@ -23,9 +23,27 @@ class AccountController extends Controller
     }
 
     /**
-     * Display the resources.
-     *
-     * @return JsonResponse
+     *  /**
+     * @OA\Info(
+     *     version="1.0",
+     *     title="Example for response examples value"
+     * )
+     * @OA\Get(
+     *     path="/api/v1/accounts",
+     *     summary="Get the user's accounts",
+     *     tags={"Account"},
+     *     @OA\Parameter(
+     *         description="Authorization token",
+     *         in="header",
+     *         name="authorization",
+     *         required=true,
+     *         @OA\Schema(type="string"),
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="OK"
+     *     )
+     * )
      */
     public function index()
     {
@@ -37,11 +55,29 @@ class AccountController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param Request $request
-     *
-     * @return JsonResponse
+     * @OA\Post(
+     *     path="/api/v1/accounts",
+     *     summary="Store user's account",
+     *     tags={"Account"},
+     *     @OA\Parameter(
+     *         description="Authorization token",
+     *         in="header",
+     *         name="authorization",
+     *         required=true,
+     *         @OA\Schema(type="string"),
+     *     ),
+     *     @OA\Parameter(
+     *         description="Account type",
+     *         in="query",
+     *         name="account_type",
+     *         required=true,
+     *         @OA\Schema(type="string"),
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="OK"
+     *     )
+     * )
      */
     public function store(AccountRequest $request): JsonResponse
     {
@@ -53,11 +89,43 @@ class AccountController extends Controller
     }
 
     /**
-     * Transfer.
-     *
-     * @param Request $request
-     *
-     * @return JsonResponse
+     * @OA\Post(
+     *     path="/api/v1/transfer",
+     *     summary="Transfer between two accounts",
+     *     tags={"Account"},
+     *     @OA\Parameter(
+     *         description="Authorization token",
+     *         in="header",
+     *         name="authorization",
+     *         required=true,
+     *         @OA\Schema(type="string"),
+     *     ),
+     *     @OA\Parameter(
+     *         description="Origin account number",
+     *         in="query",
+     *         name="origin_account_number",
+     *         required=true,
+     *         @OA\Schema(type="string"),
+     *     ),
+     *     @OA\Parameter(
+     *         description="Destination account number",
+     *         in="query",
+     *         name="destination_account_number",
+     *         required=true,
+     *         @OA\Schema(type="string"),
+     *     ),
+     *     @OA\Parameter(
+     *         description="Ammount",
+     *         in="query",
+     *         name="amount",
+     *         required=true,
+     *         @OA\Schema(type="string"),
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="OK"
+     *     )
+     * )
      */
     public function transfer(TransferRequest $request): JsonResponse
     {
@@ -71,11 +139,29 @@ class AccountController extends Controller
     }
 
     /**
-     * Transfer.
-     *
-     * @param Request $request
-     *
-     * @return JsonResponse
+     * @OA\Get(
+     *     path="/api/v1/balance",
+     *     summary="Get the user's account's balance",
+     *     tags={"Account"},
+     *     @OA\Parameter(
+     *         description="Authorization token",
+     *         in="header",
+     *         name="authorization",
+     *         required=true,
+     *         @OA\Schema(type="string"),
+     *     ),
+     *     @OA\Parameter(
+     *         description="Account number",
+     *         in="query",
+     *         name="account_number",
+     *         required=true,
+     *         @OA\Schema(type="string"),
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="OK"
+     *     )
+     * )
      */
     public function balance(BalanceRequest $request): JsonResponse
     {
