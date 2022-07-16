@@ -1,0 +1,3 @@
+curl --location --request GET 'localhost:8000/api/v1/balance?account_number=23206424' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer 1|ijx0xvRYdA3qa5dwsO0D2MzWBYDsh2igdfHaMSiY'

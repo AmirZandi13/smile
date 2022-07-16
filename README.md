@@ -1,64 +1,91 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## About This Project
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This task is to build an internal API for a fake financial institution using PHP and
+Laravel.
 
-## About Laravel
+## Brief
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+While modern banks have evolved to serve a plethora of functions, at their core, banks must
+provide certain basic features. Today, your task is to build the basic HTTP API for one of
+those banks! Imagine you are designing a backend API for bank employees. It could
+ultimately be consumed by multiple frontends (web, iOS, Android etc).
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Requirements for this project
+You should have these requirements:
+#### PHP > 8.1
+#### Laravel > 9.19
+#### MYSQL > 8.0.20
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## How to install this project
 
-## Learning Laravel
+To do that, at first you should set your env variables,
+for this part you can use this command:
+#### cp .env.example .env
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Next step is filling the variables with .env file according to
+what you have on your device.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+These environment variables are required:
+#### DB_HOST
+#### DB_PORT
+#### DB_DATABASE
+#### DB_USERNAME
+#### DB_PASSWORD
 
-## Laravel Sponsors
+#### TEST_USER_NAME
+#### TEST_USER_EMAIL
+#### TEST_USER_PASSWORD
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+#### ACCESS_TOKEN_NAME
+#### CARD_NUMBER_PREFIX
 
-### Premium Partners
+After setting the variables you should run migration with this command: 
+#### php artisan migrate
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Then run the seeder with this command:
+#### php artisan db:seed
 
-## Contributing
+Finally run this command to serve the project
+#### php artisan serve
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## API documentation
+To see the documentation using swagger please run this command:
+#### php artisan l5-swagger:generate
+after running this command you can see the api documentation at http://your-domain/api/documentation
 
-## Code of Conduct
+Also you can see the api documentation via curls, to see that you should go thorough the public folder and see them
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Get the bearer access token
+To get that please run this command
+#### php artisan access-token:create
 
-## Security Vulnerabilities
+## Tests
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+To run the tests, at first you should set env variables in .env.testing
+to do that you can run this command: 
+#### cp .env.testing.example .env.testing
+after that you have to set these env variables
+#### DB_HOST
+#### DB_PORT
+#### DB_DATABASE
+#### DB_USERNAME
+#### DB_PASSWORD
 
-## License
+#### TEST_USER_NAME
+#### TEST_USER_EMAIL
+#### TEST_USER_PASSWORD
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+#### ACCESS_TOKEN_NAME
+#### CARD_NUMBER_PREFIX
+
+ok cool, now you can run the tests with this command
+#### php artisan test
+
+
+## The end
+I hope you enjoy from this project, please tell me your points about this project.
+
+#### Amir Zandieh
+#### Amirzandieh1@gamil.com
+
+#### Thanks

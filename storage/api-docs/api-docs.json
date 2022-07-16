@@ -1,0 +1,187 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Example for response examples value",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/v1/accounts": {
+            "get": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "Get the user's accounts",
+                "description": "/**",
+                "operationId": "d0843c66644ffb27960437c18bbec269",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "description": "Authorization token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "Store user's account",
+                "operationId": "a9239744b44ef1f6de5609fbca09c53f",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "description": "Authorization token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "account_type",
+                        "in": "query",
+                        "description": "Account type",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/v1/transfer": {
+            "post": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "Transfer between two accounts",
+                "operationId": "4ce9f95f7c71bf6f06adf6625f42520e",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "description": "Authorization token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "origin_account_number",
+                        "in": "query",
+                        "description": "Origin account number",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "destination_account_number",
+                        "in": "query",
+                        "description": "Destination account number",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "in": "query",
+                        "description": "Ammount",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/v1/balance": {
+            "get": {
+                "tags": [
+                    "Account"
+                ],
+                "summary": "Get the user's account's balance",
+                "operationId": "3ea56e2ef7e3568369ca4a0c8535295b",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "description": "Authorization token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "account_number",
+                        "in": "query",
+                        "description": "Account number",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/v1/transactions": {
+            "get": {
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Get the user's transactions",
+                "operationId": "9115b43a55e6c92c81e6c62926e4034f",
+                "parameters": [
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "description": "Authorization token",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "account_number",
+                        "in": "query",
+                        "description": "Account number",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    }
+}
