@@ -23,4 +23,13 @@ class AccountType extends Model
         'description',
         'code'
     ];
+
+    /**
+     * @var string[]
+     */
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+        'deleted_at'
+    ];
 }
